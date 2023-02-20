@@ -1,2 +1,4 @@
 # articulate-docs
 A collection of Articulate 360 user guides.
+
+I think the official user guides provided by Articulate are great for just getting started, but are not granular enough for people trying to do anything advanced. I want to create user guides here on GitHub so that others can chime in with documentation they think would be fruitful.
