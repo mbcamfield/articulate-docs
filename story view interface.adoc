@@ -1,1 +1,21 @@
 = Navigating the Story View Interface
+Mitchell Camfield <mbcamfield@gmail.com> Feb 20, 2023
+:icons: font
+
+== The Ribbon
+=== File
+=== Home
+=== Slides
+=== Design
+NOTE: must have a slide seleceted to see this tab
+
+== Story View Window
+=== Scene Selector
+==== Slide Options
+== Triggers
+=== Trigger Options
+==== Object Triggers
+== Slide Properties
+=== Properties
+=== Slide Navigation and Gestures
+=== Player Features
