@@ -2,29 +2,38 @@
 Mitchell Camfield <mbcamfield@gmail.com>
 v1.0, Feb 2, 2023
 :icons: font
+:iconsdir: https://kit.fontawesome.com/be5bdce067
+// I have no clue if the iconsdir above is actually linking to the fontawesome site, or if it is failing and defaulting to the default font of asciidocs
+
 All content for this guide was gathered from https://asciidoctor.org/docs/asciidoc-writers-guide/. I have simply put it in this template document so that I could organize the information in a way that works for me.
 
-== Formating Text
+== Formatting Text
 === Line breaks
 For one-off's, use either:
 
+[example]
+====
 ----
 This is the first line. +
 This is the second line.
 ----
+====
 
 or
 
+[example]
+====
 ----
 [%hardbreaks]
 This is the first line
 This is the second line
 [end]
 ----
+====
 
 You can also create an attribute at the top of the document by using the `hardbreaks` attribute.
 
-== Admonitions
+=== Admonitions
 There are 5 types of admonitions that can be used for drawing attention to content. They are +
 
 * NOTE
@@ -51,3 +60,45 @@ CAUTION: Take a git course or two before messing around with the files on your c
 WARNING: I did not take a git course before messing around with the files of my computer so you may pull out your hair trying to understand my unorgonized repo.
 
 Icons can be enabled and customized via the `icons` attribute in the document.
+
+=== Text Impact
+We can make text bold, italic, and much more using markup as well.
+
+Using these symbols:
+[example]
+====
+----
+bold *constrained* & **un**constrained
+
+italic _constrained_ & __un__constrained
+
+bold italic *_constrained_* & **__un__**constrained
+
+monospace `constrained` & ``un``constrained
+
+monospace bold `*constrained*` & ``**un**``constrained
+
+monospace italic `_constrained_` & ``__un__``constrained
+
+monospace bold italic `*_constrained_*` & ``**__un__**``constrained
+----
+====
+
+turns our text into:
+
+[example]
+====
+bold *constrained* & **un**constrained
+
+italic _constrained_ & __un__constrained
+
+bold italic *_constrained_* & **__un__**constrained
+
+monospace `constrained` & ``un``constrained
+
+monospace bold `*constrained*` & ``**un**``constrained
+
+monospace italic `_constrained_` & ``__un__``constrained
+
+monospace bold italic `*_constrained_*` & ``**__un__**``constrained
+====
