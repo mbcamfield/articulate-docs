@@ -2,7 +2,6 @@
 Mitchell Camfield <mbcamfield@gmail.com>
 v1.0, Feb 2, 2023
 :icons: font
-:iconsdir: https://kit.fontawesome.com/be5bdce067
 // I have no clue if the iconsdir above is actually linking to the fontawesome site, or if it is failing and defaulting to the default font of asciidocs
 
 All content for this guide was gathered from https://asciidoctor.org/docs/asciidoc-writers-guide/. I have simply put it in this template document so that I could organize the information in a way that works for me.
@@ -11,7 +10,6 @@ All content for this guide was gathered from https://asciidoctor.org/docs/asciid
 === Line breaks
 For one-off's, use either:
 
-[example]
 ====
 ----
 This is the first line. +
@@ -21,7 +19,6 @@ This is the second line.
 
 or
 
-[example]
 ====
 ----
 [%hardbreaks]
@@ -44,19 +41,19 @@ There are 5 types of admonitions that can be used for drawing attention to conte
 
 Here is what each of these warnings look like:
 
-=== Note
+==== Note
 NOTE: The author of this guide is new to Asciidocs and his advice should be taken with a grain of salt.
 
-=== Tip
+==== Tip
 TIP: If you want to get the most out of Asciidocs, definitely go to asciidoctor.org instead of taking advice from this random document on GitHub.
 
-=== Important
+==== Important
 IMPORTANT: Save your work frequently and back it up to another device before formatting your software!
 
-=== Caution
+==== Caution
 CAUTION: Take a git course or two before messing around with the files on your computer.
 
-=== Warning
+==== Warning
 WARNING: I did not take a git course before messing around with the files of my computer so you may pull out your hair trying to understand my unorgonized repo.
 
 Icons can be enabled and customized via the `icons` attribute in the document.
@@ -65,7 +62,6 @@ Icons can be enabled and customized via the `icons` attribute in the document.
 We can make text bold, italic, and much more using markup as well.
 
 Using these symbols:
-[example]
 ====
 ----
 bold *constrained* & **un**constrained
@@ -86,7 +82,6 @@ monospace bold italic `*_constrained_*` & ``**__un__**``constrained
 
 turns our text into:
 
-[example]
 ====
 bold *constrained* & **un**constrained
 
@@ -102,3 +97,105 @@ monospace italic `_constrained_` & ``__un__``constrained
 
 monospace bold italic `*_constrained_*` & ``**__un__**``constrained
 ====
+
+=== Preventing Substitution
+Precede punctuation with a `\` do prevent it from being interpreted. If the punctuation is 2 characters long, then precede it with `\\`.
+
+====
+\*Stars* will appear as *Stars*, not as bold text.
+
+\&sect; will appear as an entity, not the &sect; symbol.
+
+\\__func__ will appear as __func__, not as emphasized text.
+
+\{two-semicolons} will appear {two-semicolons}, not resolved as ;;.
+====
+
+=== Lists
+One of the easiest things in Asciidoc. You can add a title to a list by prefixing it with a period (`.`)
+
+==== Unordered
+Unordered list are the most intuitive thing:
+
+.The first three numbers (that we know of)
+* First
+* Second
+* Third
+
+You can seperate lists by using `//-`. Also, you can use dashes if the list isn't nested. Nesting is pretty easy too - just add more asterisks.
+
+* First
+** First.5
+* Second
+ ** Second.5
+ *** Second.25
+* Third
+
+//-
+
+- Bronze
+- Aluminum
+- That green stuff
+
+==== Ordered
+Ordered lists are pretty easy too. You can number them, but its easier just to use a period (`.`) followed by a space, then the item.
+
+NOTE: Following a period with no space is for the title. Following a period with a space is used for ordered lists.
+
+====
+. Step 1
+. Step 2
+. Step 3
+====
+
+Nesting these lists is the same as unordered lists - just add more periods for more nesting. Feeling crazy? You can mix ordered and unordered lists.
+
+====
+. Step 1
+** Make Asciidocs guide
+. Step 2
+.. Mess up formatting of list
+. Step 3
+** Blame it on the IDE
+*** (VS Code)
+====
+
+Setting the syle of the list gives you the power to change the starting number and the appearance of the list.
+
+====
+[start =4]
+. Step 4! Wow!
+. Step 5! Bananas!
+. Step 6! Hot diggity dog
+====
+
+//-
+
+====
+[lowerroman]
+. What dis?
+. R u forreal?
+[loweralpha]
+.. Wow... a whole new world...
+====
+
+==== Description
+Description lists are useful when you need to list things and also write a description afterwords.
+
+You can use the `[horizontal]` attribute to have the description be on the same line as the list item.
+
+Just like the unordered and ordered lists above, you can mix and match the list types.
+
+====
+CPU:: The brain of the computer.
+* Central Processing Unit
+** Very expensive
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+[horizontal]
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+====
+
+== Links and Images
